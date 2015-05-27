@@ -1,4 +1,5 @@
-﻿using GalaSoft.MvvmLight;
+﻿using System;
+using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
 using GalaSoft.MvvmLight.Views;
 
@@ -16,7 +17,7 @@ namespace UWP.Client.ViewModels
         {
             this._navigationService = navigationService;
             
-            this.NavigateCommand = new RelayCommand(() => _navigationService.NavigateTo("SecondPage", null));
+            this.NavigateCommand = new RelayCommand(() => _navigationService.NavigateTo("SecondPage", "Custom parameter"));
 
             this.HelloWorldText = "Hello world.";
         }

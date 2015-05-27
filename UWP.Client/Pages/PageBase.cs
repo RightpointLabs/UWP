@@ -1,6 +1,7 @@
 ﻿using System;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Navigation;
+using GalaSoft.MvvmLight;
 using Microsoft.Practices.ServiceLocation;
 
 namespace UWP.Client.Pages
@@ -11,7 +12,8 @@ namespace UWP.Client.Pages
         {
             string fullName = $"{e.SourcePageType.Namespace}.ViewModels.{e.SourcePageType.Name.Replace("Page", "ViewModel")}";
             Type viewModelType = Type.GetType(fullName);
-            this.DataContext = ServiceLocator.Current.GetInstance(viewModelType);
+            ViewModelBase viewModel = ServiceLocator.Current.GetInstance(viewModelType) as ViewModelBase;
+            this.DataContext = viewModel;
 
             base.OnNavigatedTo(e);
         }
