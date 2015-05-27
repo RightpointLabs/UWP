@@ -4,7 +4,7 @@ using GalaSoft.MvvmLight.Views;
 
 namespace UWP.Client.ViewModels
 {
-    public class MainViewModel : ViewModelBase
+    public class SecondViewModel : ViewModelBase
     {
         private readonly INavigationService _navigationService;
 
@@ -12,13 +12,13 @@ namespace UWP.Client.ViewModels
 
         public RelayCommand NavigateCommand { get; set; }
 
-        public MainViewModel(NavigationService navigationService)
+        public SecondViewModel(NavigationService navigationService)
         {
             this._navigationService = navigationService;
             
-            this.NavigateCommand = new RelayCommand(() => _navigationService.NavigateTo("SecondPage", null));
+            this.NavigateCommand = new RelayCommand(() => _navigationService.NavigateTo("MainPage", null));
 
-            this.HelloWorldText = "Hello world.";
+            this.HelloWorldText = "This is the Second Page.";
         }
     }
 }
