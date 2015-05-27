@@ -9,7 +9,7 @@ namespace UWP.Client.Pages
     {
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            string fullName = e.SourcePageType.Namespace + ".ViewModels." + e.SourcePageType.Name.Replace("Page", "") + "ViewModel";
+            string fullName = $"{e.SourcePageType.Namespace}.ViewModels.{e.SourcePageType.Name.Replace("Page", "ViewModel")}";
             Type viewModelType = Type.GetType(fullName);
             this.DataContext = ServiceLocator.Current.GetInstance(viewModelType);
 
