@@ -5,4 +5,14 @@
     xmlns:local="using:UWP.Client"
     RequestedTheme="Dark">
 
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Theme/Base.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="/Theme/Brushes.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="/Theme/Templates.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="/Theme/Fonts.xaml"></ResourceDictionary>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
 </Application>

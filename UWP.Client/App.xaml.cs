@@ -5,6 +5,7 @@ using Windows.ApplicationModel.Activation;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Navigation;
+using UWP.Client.DI;
 
 // The Blank Application template is documented at http://go.microsoft.com/fwlink/?LinkId=402347&clcid=0x409
 
@@ -62,6 +63,9 @@ namespace UWP.Client
 
             if (rootFrame.Content == null)
             {
+                // initialize IoC container so it runs prior to navigation
+                UnityContainerFactory.GetContainer();
+
                 // When the navigation stack isn't restored navigate to the first page,
                 // configuring the new page by passing required information as a navigation
                 // parameter
