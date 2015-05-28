@@ -6,17 +6,13 @@ namespace UWP.Client.ViewModels
 {
     public class SecondViewModel : ViewModelBase
     {
-        private readonly INavigationService _navigationService;
-
         public string HelloWorldText { get; set; }
 
         public RelayCommand NavigateCommand { get; set; }
 
-        public SecondViewModel(NavigationService navigationService)
+        public SecondViewModel(NavigationService navigationService) : base(navigationService)
         {
-            this._navigationService = navigationService;
-            
-            this.NavigateCommand = new RelayCommand(() => _navigationService.NavigateTo("MainPage", null));
+            this.NavigateCommand = new RelayCommand(() => base.NavigationService.NavigateTo("MainPage", "Custom parameter 2"));
 
             this.HelloWorldText = "This is the Second Page.";
         }
