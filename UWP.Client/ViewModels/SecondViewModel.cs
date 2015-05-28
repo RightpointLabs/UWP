@@ -1,4 +1,4 @@
-﻿using GalaSoft.MvvmLight;
+﻿using Windows.UI.Xaml.Navigation;
 using GalaSoft.MvvmLight.Command;
 using GalaSoft.MvvmLight.Views;
 
@@ -19,6 +19,13 @@ namespace UWP.Client.ViewModels
             this.NavigateCommand = new RelayCommand(() => _navigationService.NavigateTo("MainPage", null));
 
             this.HelloWorldText = "This is the Second Page.";
+        }
+
+        public override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            // load logic (note that "e" contains Parameter)
+
+            base.OnNavigatedTo(e);
         }
     }
 }
